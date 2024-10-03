@@ -1,8 +1,9 @@
 package evmc_use
 
 import (
-	"github.com/ethereum/evmc/v10/bindings/go/evmc"
 	"testing"
+
+	"github.com/rgeraldes24/evmc/v10/bindings/go/evmc"
 )
 
 var exampleVmPath = "./example-vm.so"

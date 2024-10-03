@@ -124,8 +124,8 @@ Licensed under the [Apache License, Version 2.0].
 [evmc-js]: https://github.com/RainBlock/evmc-js
 [rust-ssvm]: https://github.com/second-state/rust-ssvm
 [standard readme]: https://github.com/RichardLitt/standard-readme
-[tools/evmc]: https://github.com/ethereum/evmc/tree/master/tools/evmc
-[tools/vmtester]: https://github.com/ethereum/evmc/tree/master/tools/vmtester
+[tools/evmc]: https://github.com/rgeraldes24/evmc/tree/master/tools/evmc
+[tools/vmtester]: https://github.com/rgeraldes24/evmc/tree/master/tools/vmtester
 
 [gitter badge]: https://img.shields.io/gitter/room/ethereum/evmc.svg
 [license badge]: https://img.shields.io/github/license/ethereum/evmc.svg?logo=apache

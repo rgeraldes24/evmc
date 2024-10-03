@@ -54,7 +54,7 @@ API changes are allowed when required to fix a broken feature.
 ## Go
 
 ```go
-import "github.com/ethereum/evmc/bindings/go/evmc"
+import "github.com/rgeraldes24/evmc/bindings/go/evmc"
 ```
 
 
