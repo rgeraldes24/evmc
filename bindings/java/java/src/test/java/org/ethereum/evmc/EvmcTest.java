@@ -79,8 +79,7 @@ final class EvmcTest {
       byte[] code = {0x30, 0x60, 0x00, 0x52, 0x59, 0x60, 0x00, (byte) 0xf3}; // return_address
       ByteBuffer bbcode = ByteBuffer.allocateDirect(code.length).put(code);
 
-      ByteBuffer result =
-          vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
+      ByteBuffer result = vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
       int statusCode = result.getInt();
       result.getInt(); // padding
       long gasLeft = result.getLong();
@@ -109,8 +108,7 @@ final class EvmcTest {
       byte[] code = {0x60, 0x01, 0x60, 0x00, 0x54, 0x01, 0x60, 0x00, 0x55}; // counter
       ByteBuffer bbcode = ByteBuffer.allocateDirect(code.length).put(code);
 
-      ByteBuffer result =
-          vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
+      ByteBuffer result = vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
       int statusCode = result.getInt();
       result.getInt(); // padding
       long gasLeft = result.getLong();
@@ -139,8 +137,7 @@ final class EvmcTest {
       byte[] code = {0x43, 0x60, 0x00, 0x52, 0x59, 0x60, 0x00, (byte) 0xf3}; // return_block_number(
       ByteBuffer bbcode = ByteBuffer.allocateDirect(code.length).put(code);
 
-      ByteBuffer result =
-          vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
+      ByteBuffer result = vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
       int statusCode = result.getInt();
       result.getInt(); // padding
       long gasLeft = result.getLong();
@@ -171,8 +168,7 @@ final class EvmcTest {
       }; // save_return_block_number
       ByteBuffer bbcode = ByteBuffer.allocateDirect(code.length).put(code);
 
-      ByteBuffer result =
-          vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
+      ByteBuffer result = vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
       int statusCode = result.getInt();
       result.getInt(); // padding
       long gasLeft = result.getLong();
