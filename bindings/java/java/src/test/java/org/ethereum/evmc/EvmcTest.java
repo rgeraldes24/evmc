@@ -206,8 +206,7 @@ final class EvmcTest {
       }; // make_a_call(
       ByteBuffer bbcode = ByteBuffer.allocateDirect(code.length).put(code);
 
-      ByteBuffer result =
-          vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
+      ByteBuffer result = vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
       int statusCode = result.getInt();
       result.getInt(); // padding
       long gasLeft = result.getLong();
@@ -234,8 +233,7 @@ final class EvmcTest {
       byte[] code = {0x00};
       ByteBuffer bbcode = ByteBuffer.allocateDirect(code.length).put(code);
 
-      ByteBuffer result =
-          vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
+      ByteBuffer result = vm.execute(context, SHANGHAI, msg, bbcode).order(ByteOrder.nativeOrder());
       int statusCode = result.getInt();
       result.getInt(); // padding
       long gasLeft = result.getLong();
