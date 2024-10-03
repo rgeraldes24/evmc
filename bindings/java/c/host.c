@@ -468,9 +468,10 @@ static enum evmc_access_status access_storage_fn(struct evmc_host_context* conte
 const struct evmc_host_interface* evmc_java_get_host_interface()
 {
     static const struct evmc_host_interface host = {
-        account_exists_fn, get_storage_fn, set_storage_fn,    get_balance_fn,    get_code_size_fn,
-        get_code_hash_fn,  copy_code_fn,   call_fn,           get_tx_context_fn,
-        get_block_hash_fn, emit_log_fn,    access_account_fn, access_storage_fn,
+        account_exists_fn, get_storage_fn,    set_storage_fn, get_balance_fn,
+        get_code_size_fn,  get_code_hash_fn,  copy_code_fn,   call_fn,
+        get_tx_context_fn, get_block_hash_fn, emit_log_fn,    access_account_fn,
+        access_storage_fn,
     };
     return &host;
 }
