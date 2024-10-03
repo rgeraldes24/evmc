@@ -870,18 +870,18 @@ TEST(cpp, revision_to_string)
         std::string_view str;
     };
 
+// TODO(rgeraldes24)
 // NOLINTNEXTLINE(cppcoreguidelines-macro-usage)
-#define TEST_CASE(NAME) \
-    TestCase            \
-    {                   \
-        NAME, #NAME     \
-    }
-    constexpr TestCase test_cases[]{
-        TEST_CASE(EVMC_SHANGHAI),
-    };
-#undef TEST_CASE
+// #define TEST_CASE(NAME) \
+//     TestCase            \
+//     {                   \
+//         NAME, #NAME     \
+//     }
+//     constexpr TestCase test_cases[]{
+//         TEST_CASE(EVMC_SHANGHAI),
+//     };
+// #undef TEST_CASE
 
-    // TODO(rgeraldes24)
     // ASSERT_EQ(std::size(test_cases), size_t{EVMC_MAX_REVISION + 1});
     /*
     std::ostringstream os;

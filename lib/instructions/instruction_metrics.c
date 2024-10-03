@@ -295,7 +295,7 @@ static struct evmc_instruction_metrics shanghai_metrics[256] = {
 const struct evmc_instruction_metrics* evmc_get_instruction_metrics_table(
     enum evmc_revision revision)
 {
-    if (evmc_revision == EVMC_SHANGHAI) {
+    if (revision == EVMC_SHANGHAI) {
         return shanghai_metrics;
     } else {
         return NULL;
