@@ -266,7 +266,7 @@ static const char* shanghai_names[256] = {
 const char* const* evmc_get_instruction_names_table(enum evmc_revision revision)
 {
     if (revision == EVMC_SHANGHAI) {
-        return shanghai_metrics;
+        return shanghai_names;
     } else {
         return NULL;
     }
