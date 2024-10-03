@@ -7,6 +7,7 @@ include(UseJava)
 find_package(Java REQUIRED COMPONENTS Development)
 find_package(JNI REQUIRED)
 
+# TODO(rgeraldes24): ethereum/evmc
 add_jar(evmc-jar
     OUTPUT_NAME evmc-java
     VERSION ${PROJECT_VERSION}

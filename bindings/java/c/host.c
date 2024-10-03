@@ -47,6 +47,7 @@ static void CopyFromByteBuffer(JNIEnv* jenv, jobject src, void* dst, size_t size
     memcpy(dst, ptr, size);
 }
 
+// TODO(rgeraldes24): ethereum/evmc
 static bool account_exists_fn(struct evmc_host_context* context, const evmc_address* address)
 {
     const char java_method_name[] = "account_exists";

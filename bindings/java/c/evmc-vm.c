@@ -29,6 +29,7 @@ JNIEXPORT jobject JNICALL Java_org_ethereum_evmc_EvmcVm_load_1and_1create(JNIEnv
     if (loader_error != EVMC_LOADER_SUCCESS)
     {
         const char* error_msg = evmc_last_error_msg();
+        // TODO(rgeraldes24): ethereum/evmc
         jclass exception_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/EvmcLoaderException");
         assert(exception_class != NULL);
         (*jenv)->ThrowNew(jenv, exception_class, error_msg ? error_msg : "Loading EVMC VM failed");
