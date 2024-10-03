@@ -64,7 +64,7 @@ TEST(instructions, shanghai_hard_fork)
 
     for (auto op : {OP_SHL, OP_SHR, OP_SAR})
     {
-        const auto m = c[op];
+        const auto m = s[op];
         EXPECT_EQ(m.gas_cost, 3);
         EXPECT_EQ(m.stack_height_required, 2);
         EXPECT_EQ(m.stack_height_change, -1);
