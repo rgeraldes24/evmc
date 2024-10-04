@@ -3,6 +3,7 @@ Integration test for EVMC Go module
 Usage:
 
     go mod init evmc.theqrl.org/evmc_use
+    // TODO(now.youtrack.cloud/issue/TE-11)
     go get github.com/rgeraldes24/evmc/v10@<commit-hash-to-be-tested>
     go mod tidy
     gcc -shared -I../../include ../../examples/example_vm/example_vm.cpp -o example-vm.so

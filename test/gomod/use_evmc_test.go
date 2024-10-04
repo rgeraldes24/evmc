@@ -3,6 +3,7 @@ package evmc_use
 import (
 	"testing"
 
+	// TODO(now.youtrack.cloud/issue/TE-11)
 	"github.com/rgeraldes24/evmc/v10/bindings/go/evmc"
 )
 
