@@ -1,8 +1,10 @@
 package evmc_use
 
 import (
-	"github.com/ethereum/evmc/v10/bindings/go/evmc"
 	"testing"
+
+	// TODO(now.youtrack.cloud/issue/TE-11)
+	"github.com/rgeraldes24/evmc/v10/bindings/go/evmc"
 )
 
 var exampleVmPath = "./example-vm.so"

@@ -837,10 +837,10 @@ inline const evmc_host_interface& Host::get_interface() noexcept
         ::evmc::internal::account_exists, ::evmc::internal::get_storage,
         ::evmc::internal::set_storage,    ::evmc::internal::get_balance,
         ::evmc::internal::get_code_size,  ::evmc::internal::get_code_hash,
-        ::evmc::internal::copy_code,
-        ::evmc::internal::call,           ::evmc::internal::get_tx_context,
-        ::evmc::internal::get_block_hash, ::evmc::internal::emit_log,
-        ::evmc::internal::access_account, ::evmc::internal::access_storage,
+        ::evmc::internal::copy_code,      ::evmc::internal::call,
+        ::evmc::internal::get_tx_context, ::evmc::internal::get_block_hash,
+        ::evmc::internal::emit_log,       ::evmc::internal::access_account,
+        ::evmc::internal::access_storage,
     };
     return interface;
 }

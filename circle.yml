@@ -118,8 +118,9 @@ commands:
             fi
             echo "version: $V"
 
-            go mod init evmc.ethereum.org/evmc_use
-            go get -v $(grep -o 'github.com/ethereum/evmc/v.*' ../../go.mod)@$V
+            go mod init evmc.theqrl.org/evmc_use
+            # TODO(now.youtrack.cloud/issue/TE-11)
+            go get -v $(grep -o 'github.com/rgeraldes24/evmc/v.*' ../../go.mod)@$V
             go mod tidy -v
             go mod graph
             g++ -shared -I../../include ../../examples/example_vm/example_vm.cpp -o example-vm.so
@@ -163,6 +164,7 @@ jobs:
           path: ~/docs
           destination: docs
 
+  # TODO(now.youtrack.cloud/issue/TE-12)
   upload-docs:
     executor: linux-clang-latest
     steps:
@@ -302,9 +304,9 @@ jobs:
       - test
 
   build-macos:
-    resource_class: macos.x86.medium.gen2
+    resource_class: macos.m1.medium.gen1
     macos:
-      xcode: 14.3.0
+      xcode: 14.3.1
     steps:
       - run:
           name: "Install System Dependencies"

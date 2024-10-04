@@ -53,8 +53,9 @@ API changes are allowed when required to fix a broken feature.
 
 ## Go
 
+// TODO(now.youtrack.cloud/issue/TE-11)
 ```go
-import "github.com/ethereum/evmc/bindings/go/evmc"
+import "github.com/rgeraldes24/evmc/bindings/go/evmc"
 ```
 
 

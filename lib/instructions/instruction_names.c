@@ -265,6 +265,17 @@ static const char* shanghai_names[256] = {
 
 const char* const* evmc_get_instruction_names_table(enum evmc_revision revision)
 {
+    if (revision == EVMC_SHANGHAI)
+    {
+        return shanghai_names;
+    }
+    else
+    {
+        return NULL;
+    }
+
+    // NOTE(rgeraldes24): build-clang-coverage
+    /*
     switch (revision)
     {
     case EVMC_SHANGHAI:
@@ -272,4 +283,5 @@ const char* const* evmc_get_instruction_names_table(enum evmc_revision revision)
     default:
         return NULL;
     }
+    */
 }
