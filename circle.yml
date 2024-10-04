@@ -119,6 +119,7 @@ commands:
             echo "version: $V"
 
             go mod init evmc.theqrl.org/evmc_use
+            # TODO(now.youtrack.cloud/issue/TE-11)
             go get -v $(grep -o 'github.com/rgeraldes24/evmc/v.*' ../../go.mod)@$V
             go mod tidy -v
             go mod graph
@@ -163,7 +164,7 @@ jobs:
           path: ~/docs
           destination: docs
 
-  # TODO(rgeraldes24)
+  # TODO(now.youtrack.cloud/issue/TE-12)
   upload-docs:
     executor: linux-clang-latest
     steps:
