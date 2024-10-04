@@ -5,8 +5,8 @@
 #include <assert.h>
 #include <jni.h>
 
-#ifndef _Included_org_ethereum_evmc_Host
-#define _Included_org_ethereum_evmc_Host
+#ifndef _Included_org_theqrl_evmc_Host
+#define _Included_org_theqrl_evmc_Host
 #ifdef __cplusplus
 extern "C" {
 #endif

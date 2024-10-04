@@ -21,7 +21,7 @@ allprojects {
                 include '**/*.java'
                 exclude '**/.gradle/**'
             }
-            importOrder 'org.ethereum', 'java', ''
+            importOrder 'org.theqrl', 'java', ''
             trimTrailingWhitespace()
             endWithNewline()
             googleJavaFormat('1.7')

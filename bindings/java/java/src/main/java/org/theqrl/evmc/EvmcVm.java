@@ -1,7 +1,7 @@
 // EVMC: Ethereum Client-VM Connector API.
 // Copyright 2019-2020 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
-package org.ethereum.evmc;
+package org.theqrl.evmc;
 
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -75,7 +75,7 @@ public final class EvmcVm implements AutoCloseable {
    * This method loads the specified evm shared library and loads/initializes the jni bindings.
    *
    * @param filename /path/filename of the evm shared object
-   * @throws org.ethereum.evmc.EvmcLoaderException
+   * @throws org.theqrl.evmc.EvmcLoaderException
    */
   public static EvmcVm create(String filename) throws EvmcLoaderException {
     if (!isAvailable()) {
@@ -93,7 +93,7 @@ public final class EvmcVm implements AutoCloseable {
    *
    * @param filename Path to the dynamic object representing the EVM implementation
    * @return Internal object pointer.
-   * @throws org.ethereum.evmc.EvmcLoaderException
+   * @throws org.theqrl.evmc.EvmcLoaderException
    */
   private static native ByteBuffer load_and_create(String filename) throws EvmcLoaderException;
 

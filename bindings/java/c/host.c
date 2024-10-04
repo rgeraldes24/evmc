@@ -47,17 +47,16 @@ static void CopyFromByteBuffer(JNIEnv* jenv, jobject src, void* dst, size_t size
     memcpy(dst, ptr, size);
 }
 
-// TODO(rgeraldes24): ethereum/evmc
 static bool account_exists_fn(struct evmc_host_context* context, const evmc_address* address)
 {
     const char java_method_name[] = "account_exists";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B)Z";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B)Z";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -80,13 +79,13 @@ static evmc_bytes32 get_storage_fn(struct evmc_host_context* context,
 {
     const char java_method_name[] = "get_storage";
     const char java_method_signature[] =
-        "(Lorg/ethereum/evmc/HostContext;[B[B)Ljava/nio/ByteBuffer;";
+        "(Lorg/theqrl/evmc/HostContext;[B[B)Ljava/nio/ByteBuffer;";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -114,13 +113,13 @@ static enum evmc_storage_status set_storage_fn(struct evmc_host_context* context
                                                const evmc_bytes32* value)
 {
     const char java_method_name[] = "set_storage";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B[B[B)I";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B[B[B)I";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -142,13 +141,13 @@ static enum evmc_storage_status set_storage_fn(struct evmc_host_context* context
 static evmc_uint256be get_balance_fn(struct evmc_host_context* context, const evmc_address* address)
 {
     const char java_method_name[] = "get_balance";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B)Ljava/nio/ByteBuffer;";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B)Ljava/nio/ByteBuffer;";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -175,13 +174,13 @@ static evmc_uint256be get_balance_fn(struct evmc_host_context* context, const ev
 static size_t get_code_size_fn(struct evmc_host_context* context, const evmc_address* address)
 {
     const char java_method_name[] = "get_code_size";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B)I";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B)I";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -201,13 +200,13 @@ static size_t get_code_size_fn(struct evmc_host_context* context, const evmc_add
 static evmc_bytes32 get_code_hash_fn(struct evmc_host_context* context, const evmc_address* address)
 {
     const char java_method_name[] = "get_code_hash";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B)Ljava/nio/ByteBuffer;";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B)Ljava/nio/ByteBuffer;";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -243,13 +242,13 @@ static size_t copy_code_fn(struct evmc_host_context* context,
                            size_t buffer_size)
 {
     const char java_method_name[] = "copy_code";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B)Ljava/nio/ByteBuffer;";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B)Ljava/nio/ByteBuffer;";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -286,13 +285,13 @@ static struct evmc_result call_fn(struct evmc_host_context* context, const struc
 {
     const char java_method_name[] = "call";
     const char java_method_signature[] =
-        "(Lorg/ethereum/evmc/HostContext;Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;";
+        "(Lorg/theqrl/evmc/HostContext;Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -317,13 +316,13 @@ static struct evmc_result call_fn(struct evmc_host_context* context, const struc
 static struct evmc_tx_context get_tx_context_fn(struct evmc_host_context* context)
 {
     const char java_method_name[] = "get_tx_context";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;)Ljava/nio/ByteBuffer;";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;)Ljava/nio/ByteBuffer;";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -343,13 +342,13 @@ static struct evmc_tx_context get_tx_context_fn(struct evmc_host_context* contex
 static evmc_bytes32 get_block_hash_fn(struct evmc_host_context* context, int64_t number)
 {
     char java_method_name[] = "get_block_hash";
-    char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;J)Ljava/nio/ByteBuffer;";
+    char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;J)Ljava/nio/ByteBuffer;";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -375,13 +374,13 @@ static void emit_log_fn(struct evmc_host_context* context,
                         size_t topics_count)
 {
     const char java_method_name[] = "emit_log";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B[BI[[BI)V";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B[BI[[BI)V";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -412,13 +411,13 @@ static enum evmc_access_status access_account_fn(struct evmc_host_context* conte
                                                  const evmc_address* address)
 {
     const char java_method_name[] = "access_account";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B)I";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B)I";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method
@@ -441,13 +440,13 @@ static enum evmc_access_status access_storage_fn(struct evmc_host_context* conte
                                                  const evmc_bytes32* key)
 {
     const char java_method_name[] = "access_storage";
-    const char java_method_signature[] = "(Lorg/ethereum/evmc/HostContext;[B[B)I";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B[B)I";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();
 
     // get java class
-    jclass host_class = (*jenv)->FindClass(jenv, "org/ethereum/evmc/Host");
+    jclass host_class = (*jenv)->FindClass(jenv, "org/theqrl/evmc/Host");
     assert(host_class != NULL);
 
     // get java method

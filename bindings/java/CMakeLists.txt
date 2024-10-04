@@ -7,15 +7,14 @@ include(UseJava)
 find_package(Java REQUIRED COMPONENTS Development)
 find_package(JNI REQUIRED)
 
-# TODO(rgeraldes24): ethereum/evmc
 add_jar(evmc-jar
     OUTPUT_NAME evmc-java
     VERSION ${PROJECT_VERSION}
     SOURCES
-    java/src/main/java/org/ethereum/evmc/EvmcLoaderException.java
-    java/src/main/java/org/ethereum/evmc/EvmcVm.java
-    java/src/main/java/org/ethereum/evmc/Host.java
-    java/src/main/java/org/ethereum/evmc/HostContext.java
+    java/src/main/java/org/theqrl/evmc/EvmcLoaderException.java
+    java/src/main/java/org/theqrl/evmc/EvmcVm.java
+    java/src/main/java/org/theqrl/evmc/Host.java
+    java/src/main/java/org/theqrl/evmc/HostContext.java
     GENERATE_NATIVE_HEADERS evmc-java-native-headers)
 
 add_library(evmc-java SHARED)
