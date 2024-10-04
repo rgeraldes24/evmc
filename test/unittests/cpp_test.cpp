@@ -883,9 +883,10 @@ TEST(cpp, revision_to_string)
 
     // ASSERT_EQ(std::size(test_cases), size_t{EVMC_MAX_REVISION + 1});
     std::ostringstream os;
-    for (size_t i = 0; i < std::size(test_cases); ++i)
+    // for (size_t i = 0; i < std::size(test_cases); ++i)
+    for (const auto& t : test_cases)
     {
-        const auto& t = test_cases[i];
+        // const auto& t = test_cases[i];
         // EXPECT_EQ(t.rev, static_cast<int>(i));
         std::string expected;
         std::transform(std::cbegin(t.str) + std::strlen("EVMC_"), std::cend(t.str),
