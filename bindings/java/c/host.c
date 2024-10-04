@@ -78,8 +78,7 @@ static evmc_bytes32 get_storage_fn(struct evmc_host_context* context,
                                    const evmc_bytes32* key)
 {
     const char java_method_name[] = "get_storage";
-    const char java_method_signature[] =
-        "(Lorg/theqrl/evmc/HostContext;[B[B)Ljava/nio/ByteBuffer;";
+    const char java_method_signature[] = "(Lorg/theqrl/evmc/HostContext;[B[B)Ljava/nio/ByteBuffer;";
 
     assert(context != NULL);
     JNIEnv* jenv = attach();

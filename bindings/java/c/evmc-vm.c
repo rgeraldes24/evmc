@@ -12,8 +12,8 @@
 #include <stdlib.h>
 
 JNIEXPORT jobject JNICALL Java_org_theqrl_evmc_EvmcVm_load_1and_1create(JNIEnv* jenv,
-                                                                          jclass jcls,
-                                                                          jstring jfilename)
+                                                                        jclass jcls,
+                                                                        jstring jfilename)
 {
     (void)jcls;
     struct evmc_vm* evm = NULL;
@@ -45,9 +45,7 @@ JNIEXPORT jint JNICALL Java_org_theqrl_evmc_EvmcVm_abi_1version(JNIEnv* jenv, jc
     return EVMC_ABI_VERSION;
 }
 
-JNIEXPORT jstring JNICALL Java_org_theqrl_evmc_EvmcVm_name(JNIEnv* jenv,
-                                                             jclass jcls,
-                                                             jobject jevm)
+JNIEXPORT jstring JNICALL Java_org_theqrl_evmc_EvmcVm_name(JNIEnv* jenv, jclass jcls, jobject jevm)
 {
     (void)jcls;
     struct evmc_vm* evm = (struct evmc_vm*)(*jenv)->GetDirectBufferAddress(jenv, jevm);
@@ -57,8 +55,8 @@ JNIEXPORT jstring JNICALL Java_org_theqrl_evmc_EvmcVm_name(JNIEnv* jenv,
 }
 
 JNIEXPORT jstring JNICALL Java_org_theqrl_evmc_EvmcVm_version(JNIEnv* jenv,
-                                                                jclass jcls,
-                                                                jobject jevm)
+                                                              jclass jcls,
+                                                              jobject jevm)
 {
     (void)jcls;
     struct evmc_vm* evm = (struct evmc_vm*)(*jenv)->GetDirectBufferAddress(jenv, jevm);
@@ -67,9 +65,7 @@ JNIEXPORT jstring JNICALL Java_org_theqrl_evmc_EvmcVm_version(JNIEnv* jenv,
     return (*jenv)->NewStringUTF(jenv, evm_version);
 }
 
-JNIEXPORT void JNICALL Java_org_theqrl_evmc_EvmcVm_destroy(JNIEnv* jenv,
-                                                             jclass jcls,
-                                                             jobject jevm)
+JNIEXPORT void JNICALL Java_org_theqrl_evmc_EvmcVm_destroy(JNIEnv* jenv, jclass jcls, jobject jevm)
 {
     (void)jcls;
     struct evmc_vm* evm = (struct evmc_vm*)(*jenv)->GetDirectBufferAddress(jenv, jevm);
@@ -92,12 +88,12 @@ static jobject AllocateDirect(JNIEnv* jenv, size_t capacity)
 }
 
 JNIEXPORT jobject JNICALL Java_org_theqrl_evmc_EvmcVm_execute(JNIEnv* jenv,
-                                                                jclass jcls,
-                                                                jobject jevm,
-                                                                jobject jcontext,
-                                                                jint jrev,
-                                                                jobject jmsg,
-                                                                jobject jcode)
+                                                              jclass jcls,
+                                                              jobject jevm,
+                                                              jobject jcontext,
+                                                              jint jrev,
+                                                              jobject jmsg,
+                                                              jobject jcode)
 {
     (void)jcls;
     struct evmc_message* msg = (struct evmc_message*)(*jenv)->GetDirectBufferAddress(jenv, jmsg);
@@ -118,8 +114,8 @@ JNIEXPORT jobject JNICALL Java_org_theqrl_evmc_EvmcVm_execute(JNIEnv* jenv,
 }
 
 JNIEXPORT jint JNICALL Java_org_theqrl_evmc_EvmcVm_get_1capabilities(JNIEnv* jenv,
-                                                                       jclass jcls,
-                                                                       jobject jevm)
+                                                                     jclass jcls,
+                                                                     jobject jevm)
 {
     (void)jcls;
     struct evmc_vm* evm = (struct evmc_vm*)(*jenv)->GetDirectBufferAddress(jenv, jevm);
@@ -128,10 +124,10 @@ JNIEXPORT jint JNICALL Java_org_theqrl_evmc_EvmcVm_get_1capabilities(JNIEnv* jen
 }
 
 JNIEXPORT jint JNICALL Java_org_theqrl_evmc_EvmcVm_set_1option(JNIEnv* jenv,
-                                                                 jclass jcls,
-                                                                 jobject jevm,
-                                                                 jstring jname,
-                                                                 jstring jval)
+                                                               jclass jcls,
+                                                               jobject jevm,
+                                                               jstring jname,
+                                                               jstring jval)
 {
     (void)jcls;
     struct evmc_vm* evm = (struct evmc_vm*)(*jenv)->GetDirectBufferAddress(jenv, jevm);
