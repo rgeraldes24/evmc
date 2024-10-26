@@ -918,7 +918,7 @@ enum evmc_capabilities
      * defined for the range of code addresses.
      *
      * The EIP-1352 (https://eips.ethereum.org/EIPS/eip-1352) specifies
-     * the range 0x000...0000 - 0x000...ffff of addresses
+     * the range Z000...0000 - Z000...ffff of addresses
      * reserved for precompiled and system contracts.
      *
      * This capability is **experimental** and MAY be removed without notice.
