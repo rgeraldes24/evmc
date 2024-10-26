@@ -403,7 +403,7 @@ removed.
 - The C++ EVMC basic types `address` and `bytes32` have user defined literals.
   [#359](https://github.com/ethereum/evmc/pull/359)
   ```cpp
-  auto a = 0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359_address;
+  auto a = ZfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359_address;
   auto b = 0xd4e56740f876aef8c010b86a40d5f56745a118d0906a34e69aec8c0db1cb8fa3_bytes32;
   ```
 - CMake option `EVMC_INSTALL` (`ON` by default) to disable installing EVMC targets.

@@ -25,6 +25,7 @@ TEST(hex, hex_of_bytes)
     EXPECT_EQ(hex({nullptr, 0}), "");
 }
 
+// TODO(rgeraldes24): add more tests from_hex_z_prefix
 TEST(hex, from_hex)
 {
     EXPECT_EQ(from_hex(""), bytes{});
