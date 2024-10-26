@@ -305,7 +305,7 @@ constexpr T parse_z_prefix(std::string_view s) noexcept
 
 
 /// Literal for evmc::address.
-constexpr address operator""_address(const char* s) noexcept
+constexpr address operator""_address(const char* s, unsigned long) noexcept
 {
     return parse_z_prefix<address>(s);
 }
