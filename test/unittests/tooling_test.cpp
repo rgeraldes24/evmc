@@ -88,8 +88,8 @@ TEST(tool_commands, create_return_1)
     std::ostringstream out;
 
     const auto exit_code =
-        run(vm, EVMC_SHANGHAI, 200, *from_hex("6960016000526001601ff3600052600a6016f3"), {},
-            true, false, out);
+        run(vm, EVMC_SHANGHAI, 200, *from_hex("6960016000526001601ff3600052600a6016f3"), {}, true,
+            false, out);
     EXPECT_EQ(exit_code, 0);
     EXPECT_EQ(out.str(), out_pattern("Shanghai", 200, "success", 6, "01", true));
 }
@@ -121,7 +121,7 @@ TEST(tool_commands, create_failure_stack_underflow)
     const auto exit_code = run(vm, EVMC_SHANGHAI, 0, *from_hex("fe"), {}, true, false, out);
     EXPECT_EQ(exit_code, EVMC_UNDEFINED_INSTRUCTION);
     EXPECT_EQ(out.str(),
-              "Creating and executing on Petersburg with 0 gas limit\n"
+              "Creating and executing on Shanghai with 0 gas limit\n"
               "Contract creation failed: undefined instruction\n");
 }
 

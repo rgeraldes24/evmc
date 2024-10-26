@@ -251,7 +251,6 @@ typedef evmc_bytes32 (*evmc_get_block_hash_fn)(struct evmc_host_context* context
  *
  * @note
  * In case new status codes are needed, please create an issue or pull request
- * // TODO(now.youtrack.cloud/issue/TE-11)
  * in the EVMC repository (https://github.com/rgeraldes24/evmc).
  */
 enum evmc_status_code
