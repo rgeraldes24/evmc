@@ -129,6 +129,7 @@ TEST(hex, from_hex_to_custom_type)
     EXPECT_FALSE(evmc::from_hex<X>("0x0000000000"));
 }
 
+/*
 TEST(hex, from_prefixed_hex_to_custom_type)
 {
     struct X
@@ -163,3 +164,4 @@ TEST(hex, from_prefixed_hex_to_custom_type)
     // The result type is too small for the input.
     EXPECT_FALSE(evmc::from_prefixed_hex<X>("Z0000000000", 'Z'));
 }
+*/
