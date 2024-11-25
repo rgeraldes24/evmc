@@ -142,7 +142,7 @@ constexpr std::optional<T> from_hex(std::string_view s) noexcept
 /// TODO: Support optional left alignment.
 template <typename T>
 constexpr std::optional<T> from_prefixed_hex(std::string_view s, const char prefix) noexcept
-{    
+{
     if (s.size() == 0 || s[0] != prefix)
         return {};
 

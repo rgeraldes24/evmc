@@ -139,7 +139,8 @@ TEST(hex, from_prefixed_hex_to_custom_type)
         return evmc::hex({evmc::from_prefixed_hex<X>(in, 'Z').value().bytes, sizeof(X)});
     };
 
-    static_assert(evmc::from_prefixed_hex<X>("Z01", 'Z').value().bytes[3] == 0x01);  // Works in constexpr.
+    static_assert(evmc::from_prefixed_hex<X>("Z01", 'Z').value().bytes[3] == 0x01);  // Works in
+                                                                                     // constexpr.
 
     EXPECT_EQ(test("Z01020304"), "01020304");
     EXPECT_EQ(test("Z010203"), "00010203");
