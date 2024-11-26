@@ -500,10 +500,7 @@ workflows:
     jobs:
       - lint
       - build-clang-coverage
-      # TODO(rgeraldes24): works for
-      #  Operating System: Ubuntu 20.04.6 LTS, OSType: linux, Architecture: x86_64
-      # but not for:
-      #  Operating System: ubuntu, OSType: linux, Architecture: amd64
+      # TODO(now.youtrack.cloud/issue/TE-16)
       #- build-gcc-sanitizers
       #- build-clang-sanitizers
       - build-clang9-asan
