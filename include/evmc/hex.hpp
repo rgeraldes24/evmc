@@ -141,13 +141,14 @@ constexpr std::optional<T> from_hex(std::string_view s) noexcept
 /// (the result bytes of lowest indices are filled with zeros).
 /// TODO: Support optional left alignment.
 template <typename T>
-constexpr std::optional<T> from_prefixed_hex(std::string_view s, std::string_view prefix) noexcept
+constexpr std::optional<T> from_prefixed_hex(std::string_view s) noexcept
+// constexpr std::optional<T> from_prefixed_hex(std::string_view s, std::string_view prefix) noexcept
 {
-    if (s.size() == 0 || s[0] != prefix[0])
+    if (s.size() == 0 || s[0] != 'Z')
         return {};
 
     // Omit the  prefix.
-    s.remove_prefix(prefix.size());
+    s.remove_prefix(1);
     T r{};  // The T must have .bytes array. This may be lifted if std::bit_cast is available.
     constexpr auto num_out_bytes = std::size(r.bytes);
     const auto num_in_bytes = s.length() / 2;
