@@ -22,7 +22,7 @@ TEST(mocked_host, mocked_account)
 TEST(mocked_host, storage)
 {
     const auto addr1 = evmc::address{};
-    const auto addr2 = 0x2000000000000000000000000000000000000000_address;
+    const auto addr2 = "0x2000000000000000000000000000000000000000"_address;
     const auto val1 = evmc::bytes32{};
     const auto val2 = 0x2000000000000000000000000000000000000000000000000102030405060708_bytes32;
     const auto val3 = 0x1000000000000000000000000000000000000000000000000000000000000000_bytes32;
@@ -74,7 +74,7 @@ TEST(mocked_host, storage)
 
 TEST(mocked_host, storage_update_scenarios)
 {
-    static constexpr auto addr = 0xff_address;
+    static constexpr auto addr = "0xff"_address;
     static constexpr auto key = 0xfe_bytes32;
 
     static constexpr auto execute_scenario = [](const evmc::bytes32& original,

@@ -37,8 +37,8 @@ protected:
 
     example_vm() noexcept
     {
-        msg.sender = 0x5000000000000000000000000000000000000005_address;
-        msg.recipient = 0xd00000000000000000000000000000000000000d_address;
+        msg.sender = "0x5000000000000000000000000000000000000005"_address;
+        msg.recipient = "0xd00000000000000000000000000000000000000d"_address;
     }
 
     evmc::Result execute_in_example_vm(int64_t gas,
@@ -153,7 +153,7 @@ TEST_F(example_vm, call)
     EXPECT_EQ(host.recorded_calls[0].gas, 3);
     EXPECT_EQ(host.recorded_calls[0].value,
               0x0000000000000000000000000000000000000000000000000000000000000003_bytes32);
-    EXPECT_EQ(host.recorded_calls[0].recipient, 0x0000000000000000000000000000000000000003_address);
+    EXPECT_EQ(host.recorded_calls[0].recipient, "0x0000000000000000000000000000000000000003"_address);
     EXPECT_EQ(host.recorded_calls[0].input_size, size_t{3});
 }
 
