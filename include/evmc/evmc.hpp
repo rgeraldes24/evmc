@@ -298,7 +298,7 @@ constexpr T parse(std::string_view s) noexcept
 /// In case the input is invalid the std::terminate() is called.
 /// TODO(c++20): Use consteval.
 template <typename T>
-constexpr T parse(std::string_view s, std::string_view prefix) noexcept
+constexpr T parse_prefixed(std::string_view s, std::string_view prefix) noexcept
 {
     return from_prefixed_hex<T>(s, prefix).value();
 }
@@ -307,7 +307,7 @@ constexpr T parse(std::string_view s, std::string_view prefix) noexcept
 /// Literal for evmc::address.
 constexpr address operator""_address(const char* s, size_t) noexcept
 {
-    return parse<address>(s, "Z");
+    return parse_prefixed<address>(s, "Z");
 }
 
 /// Literal for evmc::bytes32.

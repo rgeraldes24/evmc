@@ -145,7 +145,7 @@ constexpr std::optional<T> from_prefixed_hex(std::string_view s, std::string_vie
 {
     if (s.size() == 0 || s[0] != prefix[0])
         return {};
-    
+
     // Omit the  prefix.
     s.remove_prefix(prefix.size());
     T r{};  // The T must have .bytes array. This may be lifted if std::bit_cast is available.
