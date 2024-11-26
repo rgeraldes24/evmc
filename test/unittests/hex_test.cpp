@@ -128,3 +128,35 @@ TEST(hex, from_hex_to_custom_type)
     EXPECT_FALSE(evmc::from_hex<X>("0000000000"));
     EXPECT_FALSE(evmc::from_hex<X>("0x0000000000"));
 }
+
+
+TEST(hex, from_prefixed_hex_to_custom_type)
+{
+    struct X
+    {
+        uint8_t bytes[4];
+    };
+    constexpr auto test = [](std::string_view in) {
+        return evmc::hex({evmc::from_prefixed_hex<X>(in, "Z").value().bytes, sizeof(X)});
+    };
+    static_assert(evmc::from_prefixed_hex<X>("Z01", "Z").value().bytes[3] == 0x01);  // Works in
+                                                                                     // constexpr.
+    EXPECT_EQ(test("Z01020304"), "01020304");
+    EXPECT_EQ(test("Z010203"), "00010203");
+    EXPECT_EQ(test("Z0102"), "00000102");
+    EXPECT_EQ(test("Z01"), "00000001");
+    EXPECT_EQ(test("Z"), "00000000");
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("0", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("1", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("Z ", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("Zf", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("Z 00", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("1x", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("1Z0", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("fx", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("fZ0", "Z"));
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("f1f2f3f4", "Z"));
+    // The result type is too small for the input.
+    EXPECT_FALSE(evmc::from_prefixed_hex<X>("Z0000000000", "Z"));
+}

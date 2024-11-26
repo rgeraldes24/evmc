@@ -57,7 +57,7 @@ evmc_result execute(evmc_vm* /*vm*/,
                     size_t /*code_size*/)
 {
     // The EIP-1352 (https://eips.ethereum.org/EIPS/eip-1352) defines
-    // the range 0 - 0xffff (2 bytes) of addresses reserved for precompiled contracts.
+    // the range 0 - Zffff (2 bytes) of addresses reserved for precompiled contracts.
     // Check if the code address is within the reserved range.
 
     constexpr auto prefix_size = sizeof(evmc_address) - 2;
