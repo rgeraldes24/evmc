@@ -313,12 +313,6 @@ constexpr address operator""_address(const char* s, size_t) noexcept
 
 #else
 /// Literal for evmc::address.
-constexpr address operator""_address(const char* s, unsigned long) noexcept
-{
-    return parse<address>(s, "Z");
-}
-
-/// Literal for evmc::address.
 constexpr address operator""_address(const char* s, unsigned int) noexcept
 {
     return parse<address>(s, "Z");
