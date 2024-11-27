@@ -463,6 +463,7 @@ workflows:
       - build-clang9-asan
       - build-gcc-min
       - build-clang-min
+      - build-gcc-32bit
       - build-cmake-min
       - build-macos
       - build-windows
