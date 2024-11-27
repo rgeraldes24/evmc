@@ -313,7 +313,7 @@ constexpr address operator""_address(const char* s, size_t) noexcept
 
 #else
 /// Literal for evmc::address.
-constexpr address operator""_address(const char* s, uint64_t) noexcept
+constexpr address operator""_address(const char* s, uint32_t) noexcept
 {
     return parse<address>(s, "Z");
 }
