@@ -303,6 +303,7 @@ constexpr T parse(std::string_view s, std::string_view prefix) noexcept
     return from_prefixed_hex<T>(s, prefix).value();
 }
 
+/// Literal for evmc::address.
 constexpr address operator""_address(const char* s, unsigned long) noexcept
 {
     return parse<address>(s, "Z");
