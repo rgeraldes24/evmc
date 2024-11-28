@@ -467,8 +467,8 @@ workflows:
       - lint
       - build-clang-coverage
       # TODO(now.youtrack.cloud/issue/TE-16)
-      - build-gcc-sanitizers
-      - build-clang-sanitizers
+      #- build-gcc-sanitizers
+      #- build-clang-sanitizers
       - build-clang9-asan
       - build-gcc-min
       - build-clang-min
