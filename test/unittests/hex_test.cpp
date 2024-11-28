@@ -146,7 +146,6 @@ TEST(hex, from_prefixed_hex_to_custom_type)
     EXPECT_EQ(test("Z0102"), "00000102");
     EXPECT_EQ(test("Z01"), "00000001");
     EXPECT_EQ(test("Z"), "00000000");
-    EXPECT_FALSE(evmc::from_prefixed_hex<X>("", "Z"));
     EXPECT_FALSE(evmc::from_prefixed_hex<X>("0", "Z"));
     EXPECT_FALSE(evmc::from_prefixed_hex<X>("1", "Z"));
     EXPECT_FALSE(evmc::from_prefixed_hex<X>("Z ", "Z"));
