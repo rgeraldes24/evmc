@@ -107,13 +107,16 @@ inline bool validate_hex(std::string_view hex) noexcept
 /// TODO: Support optional left alignment.
 template <typename T>
 constexpr std::optional<T> from_prefixed_hex(std::string_view s, std::string_view prefix) noexcept
-{
-    if (!s.empty() && s.rfind(prefix, 0) != 0)
-        return {};
 
-    // Omit the prefix
-    if (!s.empty())
-        s.remove_prefix(prefix.size());
+{
+    if (!s.empty()) {
+        // NOTE(rgeraldes24): non-empty string must have the prefix
+        if (s.rfind(prefix, 0) != 0)
+            return {};
+        else 
+            s.remove_prefix(prefix.size());
+    }
+        
     T r{};  // The T must have .bytes array. This may be lifted if std::bit_cast is available.
     constexpr auto num_out_bytes = std::size(r.bytes);
     const auto num_in_bytes = s.length() / 2;
