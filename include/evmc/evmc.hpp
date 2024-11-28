@@ -303,22 +303,28 @@ constexpr T parse(std::string_view s, std::string_view prefix) noexcept
     return from_prefixed_hex<T>(s, prefix).value();
 }
 
+// #if _WIN32
+// /// Literal for evmc::address.
+// constexpr address operator""_address(const char* s, size_t) noexcept
+// {
+//     return parse<address>(s, "Z");
+// }
 
-#if _WIN32
+// #else
+// /// Literal for evmc::address.
+// constexpr address operator""_address(const char* s, unsigned long) noexcept
+// {
+//     return parse<address>(s, "Z");
+// }
+
+// #endif
+
 /// Literal for evmc::address.
-constexpr address operator""_address(const char* s, size_t) noexcept
+constexpr address operator""_address(const char* s, uint_t) noexcept
 {
     return parse<address>(s, "Z");
 }
 
-#else
-/// Literal for evmc::address.
-constexpr address operator""_address(const char* s, unsigned long) noexcept
-{
-    return parse<address>(s, "Z");
-}
-
-#endif
 
 /// Literal for evmc::bytes32.
 constexpr bytes32 operator""_bytes32(const char* s) noexcept
