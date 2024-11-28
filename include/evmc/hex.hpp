@@ -107,7 +107,6 @@ inline bool validate_hex(std::string_view hex) noexcept
 /// TODO: Support optional left alignment.
 template <typename T>
 constexpr std::optional<T> from_prefixed_hex(std::string_view s, std::string_view prefix) noexcept
-
 {
     if (!s.empty())
     {
