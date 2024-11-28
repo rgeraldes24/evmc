@@ -108,7 +108,7 @@ inline bool validate_hex(std::string_view hex) noexcept
 template <typename T>
 constexpr std::optional<T> from_prefixed_hex(std::string_view s, std::string_view prefix) noexcept
 {
-    if (s.empty() || (s.rfind(prefix, 0) != 0)) 
+    if (s.empty() || (s.rfind(prefix, 0) != 0))
     {
         return {};
     }
