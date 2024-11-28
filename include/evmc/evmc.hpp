@@ -309,7 +309,6 @@ constexpr address operator""_address(const char* s, size_t) noexcept
     return parse<address>(s, "Z");
 }
 
-
 /// Literal for evmc::bytes32.
 constexpr bytes32 operator""_bytes32(const char* s) noexcept
 {
