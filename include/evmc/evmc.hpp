@@ -320,7 +320,7 @@ constexpr T parse(std::string_view s, std::string_view prefix) noexcept
 // #endif
 
 /// Literal for evmc::address.
-constexpr address operator""_address(const char* s, uint_t) noexcept
+constexpr address operator""_address(const char* s, int) noexcept
 {
     return parse<address>(s, "Z");
 }
