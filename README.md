@@ -6,7 +6,7 @@
 > Zond Client-VM Connector API
 
 The ZVMC is the low-level ABI between Zond Virtual Machines (ZVMs) and
-Zond Clients. On the ZVM side it supports classic ZVM1 and [ewasm].
+Zond Clients. On the ZVM side it supports classic ZVM1 and [zwasm].
 On the Client-side it defines the interface for ZVM implementations
 to access Zond environment and state.
 

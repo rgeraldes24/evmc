@@ -10,7 +10,7 @@ use zvmc_vm::ExecutionResult;
 use zvmc_vm::SetOptionError;
 use zvmc_vm::ZvmcVm;
 
-#[zvmc_declare_vm("Foo VM", "ewasm, zvm", "1.42-alpha.gamma.starship")]
+#[zvmc_declare_vm("Foo VM", "zwasm, zvm", "1.42-alpha.gamma.starship")]
 pub struct FooVM {
     options: HashMap<String, String>,
 }

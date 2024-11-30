@@ -3,7 +3,7 @@
 **ABI version 10**
 
 The ZVMC is the low-level ABI between Zond Virtual Machines (ZVMs) and
-Zond Clients. On the ZVM-side it supports classic ZVM1 and [ewasm].
+Zond Clients. On the ZVM-side it supports classic ZVM1 and [zwasm].
 On the Client-side it defines the interface for ZVM implementations
 to access Zond environment and state.
 
@@ -58,7 +58,7 @@ import "github.com/theQRL/zvmc/bindings/go/zvmc"
 ```
 
 
-[ewasm]: https://github.com/ewasm/design
+[zwasm]: https://github.com/zwasm/design
 
 
 @addtogroup ZVMC

@@ -46,9 +46,9 @@ TEST_F(zvmc_vm_test, version)
 
 TEST_F(zvmc_vm_test, capabilities)
 {
-    // The VM should have at least one of ZVM1 or EWASM capabilities.
+    // The VM should have at least one of ZVM1 or ZWASM capabilities.
     EXPECT_TRUE(zvmc_vm_has_capability(vm, ZVMC_CAPABILITY_ZVM1) ||
-                zvmc_vm_has_capability(vm, ZVMC_CAPABILITY_EWASM) ||
+                zvmc_vm_has_capability(vm, ZVMC_CAPABILITY_ZWASM) ||
                 zvmc_vm_has_capability(vm, ZVMC_CAPABILITY_PRECOMPILES));
 }
 

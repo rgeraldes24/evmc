@@ -162,7 +162,7 @@ type Capability uint32
 
 const (
 	CapabilityZVM1  Capability = C.ZVMC_CAPABILITY_ZVM1
-	CapabilityEWASM Capability = C.ZVMC_CAPABILITY_EWASM
+	CapabilityZWASM Capability = C.ZVMC_CAPABILITY_ZWASM
 )
 
 func (vm *VM) HasCapability(capability Capability) bool {

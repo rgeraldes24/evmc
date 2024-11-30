@@ -13,7 +13,7 @@
 //!
 //! # Example
 //! ```
-//! #[zvmc_declare::zvmc_declare_vm("This is an example VM name", "ewasm, zvm", "1.2.3-custom")]
+//! #[zvmc_declare::zvmc_declare_vm("This is an example VM name", "zwasm, zvm", "1.2.3-custom")]
 //! pub struct ExampleVM;
 //!
 //! impl zvmc_vm::ZvmcVm for ExampleVM {
@@ -160,7 +160,7 @@ impl VMMetaData {
             for capability in capabilities_list_pruned.split(',') {
                 match capability {
                     "zvm" => ret |= 1,
-                    "ewasm" => ret |= 1 << 1,
+                    "zwasm" => ret |= 1 << 1,
                     "precompiles" => ret |= 1 << 2,
                     _ => panic!("Invalid capability specified."),
                 }

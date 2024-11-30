@@ -488,10 +488,10 @@ TEST(cpp, vm_capabilities)
     const auto vm = zvmc::VM{zvmc_create_example_vm()};
 
     EXPECT_TRUE(vm.get_capabilities() & ZVMC_CAPABILITY_ZVM1);
-    EXPECT_FALSE(vm.get_capabilities() & ZVMC_CAPABILITY_EWASM);
+    EXPECT_FALSE(vm.get_capabilities() & ZVMC_CAPABILITY_ZWASM);
     EXPECT_FALSE(vm.get_capabilities() & ZVMC_CAPABILITY_PRECOMPILES);
     EXPECT_TRUE(vm.has_capability(ZVMC_CAPABILITY_ZVM1));
-    EXPECT_FALSE(vm.has_capability(ZVMC_CAPABILITY_EWASM));
+    EXPECT_FALSE(vm.has_capability(ZVMC_CAPABILITY_ZWASM));
     EXPECT_FALSE(vm.has_capability(ZVMC_CAPABILITY_PRECOMPILES));
 }
 
