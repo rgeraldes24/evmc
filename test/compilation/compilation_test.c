@@ -4,8 +4,8 @@
 
 /* Test compilation of C public headers. */
 
-#include <zvmc/zvmc.h>
 #include <zvmc/helpers.h>
 #include <zvmc/instructions.h>
 #include <zvmc/loader.h>
 #include <zvmc/utils.h>
+#include <zvmc/zvmc.h>

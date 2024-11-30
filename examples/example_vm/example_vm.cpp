@@ -14,9 +14,9 @@
 /// pure C API and some C helpers.
 
 #include "example_vm.h"
-#include <zvmc/zvmc.h>
 #include <zvmc/helpers.h>
 #include <zvmc/instructions.h>
+#include <zvmc/zvmc.h>
 #include <algorithm>
 #include <cstdio>
 #include <cstdlib>

@@ -3,8 +3,8 @@
 // Licensed under the Apache License, Version 2.0.
 #pragma once
 
-#include <zvmc/zvmc.h>
 #include <zvmc/utils.h>
+#include <zvmc/zvmc.h>
 
 #ifdef __cplusplus
 extern "C" {

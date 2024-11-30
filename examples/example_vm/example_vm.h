@@ -4,8 +4,8 @@
 
 #pragma once
 
-#include <zvmc/zvmc.h>
 #include <zvmc/utils.h>
+#include <zvmc/zvmc.h>
 
 #ifdef __cplusplus
 extern "C" {

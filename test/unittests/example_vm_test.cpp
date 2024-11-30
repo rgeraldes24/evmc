@@ -3,9 +3,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 #include "../../examples/example_vm/example_vm.h"
-#include <zvmc/zvmc.hpp>
 #include <zvmc/hex.hpp>
 #include <zvmc/mocked_host.hpp>
+#include <zvmc/zvmc.hpp>
 #include <gtest/gtest.h>
 #include <cstring>
 

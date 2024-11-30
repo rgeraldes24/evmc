@@ -3,9 +3,9 @@
 // Licensed under the Apache License, Version 2.0.
 #pragma once
 
-#include <zvmc/zvmc.h>
 #include <zvmc/helpers.h>
 #include <zvmc/hex.hpp>
+#include <zvmc/zvmc.h>
 
 #include <functional>
 #include <initializer_list>

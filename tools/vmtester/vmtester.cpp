@@ -3,8 +3,8 @@
 // Licensed under the Apache License, Version 2.0.
 
 #include "vmtester.hpp"
-#include <zvmc/zvmc.hpp>
 #include <zvmc/loader.h>
+#include <zvmc/zvmc.hpp>
 #include <iostream>
 
 zvmc::VM zvmc_vm_test::owned_vm;

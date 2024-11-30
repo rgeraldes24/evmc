@@ -2,9 +2,9 @@
 // Copyright 2018 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
 
-#include <zvmc/zvmc.h>
 #include <zvmc/helpers.h>
 #include <zvmc/loader.h>
+#include <zvmc/zvmc.h>
 #include <gtest/gtest.h>
 #include <cstring>
 #include <unordered_map>

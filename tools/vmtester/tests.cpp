@@ -3,8 +3,8 @@
 // Licensed under the Apache License, Version 2.0.
 
 #include "vmtester.hpp"
-#include <zvmc/zvmc.hpp>
 #include <zvmc/mocked_host.hpp>
+#include <zvmc/zvmc.hpp>
 #include <array>
 #include <cstring>
 

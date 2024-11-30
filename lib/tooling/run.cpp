@@ -2,10 +2,10 @@
 // Copyright 2019-2020 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
 
-#include <zvmc/zvmc.hpp>
 #include <zvmc/hex.hpp>
 #include <zvmc/mocked_host.hpp>
 #include <zvmc/tooling.hpp>
+#include <zvmc/zvmc.hpp>
 #include <chrono>
 #include <ostream>
 

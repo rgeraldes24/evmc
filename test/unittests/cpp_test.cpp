@@ -9,8 +9,8 @@
 #include "../../examples/example_precompiles_vm/example_precompiles_vm.h"
 #include "../../examples/example_vm/example_vm.h"
 
-#include <zvmc/zvmc.hpp>
 #include <zvmc/mocked_host.hpp>
+#include <zvmc/zvmc.hpp>
 #include <gtest/gtest.h>
 #include <array>
 #include <cctype>

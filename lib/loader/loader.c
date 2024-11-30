@@ -4,8 +4,8 @@
 
 #include <zvmc/loader.h>
 
-#include <zvmc/zvmc.h>
 #include <zvmc/helpers.h>
+#include <zvmc/zvmc.h>
 
 #include <stdarg.h>
 #include <stdint.h>
