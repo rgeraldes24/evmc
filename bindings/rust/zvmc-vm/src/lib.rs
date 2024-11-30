@@ -13,8 +13,8 @@ mod container;
 mod types;
 
 pub use container::ZvmcContainer;
-pub use zvmc_sys as ffi;
 pub use types::*;
+pub use zvmc_sys as ffi;
 
 /// Trait ZVMC VMs have to implement.
 pub trait ZvmcVm {

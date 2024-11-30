@@ -2,13 +2,13 @@
 // Copyright 2019 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
 
+use std::collections::HashMap;
 use zvmc_declare::zvmc_declare_vm;
-use zvmc_vm::ZvmcVm;
 use zvmc_vm::ExecutionContext;
 use zvmc_vm::ExecutionMessage;
 use zvmc_vm::ExecutionResult;
 use zvmc_vm::SetOptionError;
-use std::collections::HashMap;
+use zvmc_vm::ZvmcVm;
 
 #[zvmc_declare_vm("Foo VM", "ewasm, zvm", "1.42-alpha.gamma.starship")]
 pub struct FooVM {
