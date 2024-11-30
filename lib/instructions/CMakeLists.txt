@@ -4,20 +4,20 @@
 
 add_library(
     instructions STATIC
-    ${EVMC_INCLUDE_DIR}/evmc/instructions.h
+    ${ZVMC_INCLUDE_DIR}/zvmc/instructions.h
     instruction_metrics.c
     instruction_names.c
 )
 
-add_library(evmc::instructions ALIAS instructions)
+add_library(zvmc::instructions ALIAS instructions)
 set_target_properties(instructions PROPERTIES
-    OUTPUT_NAME evmc-instructions
+    OUTPUT_NAME zvmc-instructions
     POSITION_INDEPENDENT_CODE TRUE
 )
 target_include_directories(instructions PUBLIC
-    $<BUILD_INTERFACE:${EVMC_INCLUDE_DIR}>$<INSTALL_INTERFACE:include>
+    $<BUILD_INTERFACE:${ZVMC_INCLUDE_DIR}>$<INSTALL_INTERFACE:include>
 )
 
-if(EVMC_INSTALL)
-    install(TARGETS instructions EXPORT evmcTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})
+if(ZVMC_INSTALL)
+    install(TARGETS instructions EXPORT zvmcTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif()

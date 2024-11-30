@@ -4,17 +4,17 @@
 
 #pragma once
 
-#include <evmc/evmc.h>
-#include <evmc/utils.h>
+#include <zvmc/zvmc.h>
+#include <zvmc/utils.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
- * Creates EVMC Example VM.
+ * Creates ZVMC Example VM.
  */
-EVMC_EXPORT struct evmc_vm* evmc_create_example_vm(void);
+ZVMC_EXPORT struct zvmc_vm* zvmc_create_example_vm(void);
 
 #ifdef __cplusplus
 }

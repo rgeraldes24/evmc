@@ -3,15 +3,15 @@
 // Licensed under the Apache License, Version 2.0.
 
 use core::str::FromStr;
-use evmc_declare::evmc_declare_vm;
-use evmc_vm::*;
+use zvmc_declare::zvmc_declare_vm;
+use zvmc_vm::*;
 
-#[evmc_declare_vm("ExampleRustVM", "evm, precompiles", "10.1.0")]
+#[zvmc_declare_vm("ExampleRustVM", "zvm, precompiles", "10.1.0")]
 pub struct ExampleRustVM {
     verbosity: i8,
 }
 
-impl EvmcVm for ExampleRustVM {
+impl ZvmcVm for ExampleRustVM {
     fn init() -> Self {
         Self { verbosity: 0 }
     }
@@ -49,7 +49,7 @@ impl EvmcVm for ExampleRustVM {
             println!("execution started");
         }
 
-        if message.kind() != MessageKind::EVMC_CALL {
+        if message.kind() != MessageKind::ZVMC_CALL {
             return ExecutionResult::failure();
         }
 

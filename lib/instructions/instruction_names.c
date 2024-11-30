@@ -2,7 +2,7 @@
 // Copyright 2018 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
 
-#include <evmc/instructions.h>
+#include <zvmc/instructions.h>
 
 static const char* shanghai_names[256] = {
     /* 0x00 */ "STOP",
@@ -263,9 +263,9 @@ static const char* shanghai_names[256] = {
     /* 0xff */ NULL,
 };
 
-const char* const* evmc_get_instruction_names_table(enum evmc_revision revision)
+const char* const* zvmc_get_instruction_names_table(enum zvmc_revision revision)
 {
-    if (revision == EVMC_SHANGHAI)
+    if (revision == ZVMC_SHANGHAI)
     {
         return shanghai_names;
     }
@@ -278,7 +278,7 @@ const char* const* evmc_get_instruction_names_table(enum evmc_revision revision)
     /*
     switch (revision)
     {
-    case EVMC_SHANGHAI:
+    case ZVMC_SHANGHAI:
         return shanghai_names;
     default:
         return NULL;

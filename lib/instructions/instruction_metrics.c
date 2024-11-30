@@ -2,7 +2,7 @@
 // Copyright 2018 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
 
-#include <evmc/instructions.h>
+#include <zvmc/instructions.h>
 
 /**
  * Gas cost tiers, names from Yellow Paper.
@@ -20,7 +20,7 @@ enum
      * Marks an instruction as undefined.
      *
      * The gas cost for undefined instructions is 0 because this is the cost of executing them
-     * in practice in EVM implementations.
+     * in practice in ZVM implementations.
      */
     UNDEFINED = ZERO
 };
@@ -33,7 +33,7 @@ enum
     WARM_STORAGE_READ_COST = 100
 };
 
-static struct evmc_instruction_metrics shanghai_metrics[256] = {
+static struct zvmc_instruction_metrics shanghai_metrics[256] = {
     /*           STOP = 0x00 */ {ZERO, 0, 0},
     /*            ADD = 0x01 */ {VERYLOW, 2, -1},
     /*            MUL = 0x02 */ {LOW, 2, -1},
@@ -292,10 +292,10 @@ static struct evmc_instruction_metrics shanghai_metrics[256] = {
     /*                = 0xff */ {UNDEFINED, 0, 0},
 };
 
-const struct evmc_instruction_metrics* evmc_get_instruction_metrics_table(
-    enum evmc_revision revision)
+const struct zvmc_instruction_metrics* zvmc_get_instruction_metrics_table(
+    enum zvmc_revision revision)
 {
-    if (revision == EVMC_SHANGHAI)
+    if (revision == ZVMC_SHANGHAI)
     {
         return shanghai_metrics;
     }
@@ -308,7 +308,7 @@ const struct evmc_instruction_metrics* evmc_get_instruction_metrics_table(
     /*
     switch (revision)
     {
-    case EVMC_SHANGHAI:
+    case ZVMC_SHANGHAI:
         return shanghai_metrics;
     default:
         return NULL;

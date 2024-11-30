@@ -2,14 +2,14 @@
 // Copyright 2019-2020 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
 
-#include <evmc/evmc.hpp>
-#include <evmc/hex.hpp>
-#include <evmc/mocked_host.hpp>
-#include <evmc/tooling.hpp>
+#include <zvmc/zvmc.hpp>
+#include <zvmc/hex.hpp>
+#include <zvmc/mocked_host.hpp>
+#include <zvmc/tooling.hpp>
 #include <chrono>
 #include <ostream>
 
-namespace evmc::tooling
+namespace zvmc::tooling
 {
 namespace
 {
@@ -20,11 +20,11 @@ constexpr auto create_address = "Zc9ea7ed000000000000000000000000000000001"_addr
 constexpr auto create_gas = 10'000'000;
 
 auto bench(MockedHost& host,
-           evmc::VM& vm,
-           evmc_revision rev,
-           const evmc_message& msg,
+           zvmc::VM& vm,
+           zvmc_revision rev,
+           const zvmc_message& msg,
            bytes_view code,
-           const evmc::Result& expected_result,
+           const zvmc::Result& expected_result,
            std::ostream& out)
 {
     {
@@ -60,7 +60,7 @@ auto bench(MockedHost& host,
 }  // namespace
 
 int run(VM& vm,
-        evmc_revision rev,
+        zvmc_revision rev,
         int64_t gas,
         bytes_view code,
         bytes_view input,
@@ -73,7 +73,7 @@ int run(VM& vm,
 
     MockedHost host;
 
-    evmc_message msg{};
+    zvmc_message msg{};
     msg.gas = gas;
     msg.input_data = input.data();
     msg.input_size = input.size();
@@ -81,13 +81,13 @@ int run(VM& vm,
     bytes_view exec_code = code;
     if (create)
     {
-        evmc_message create_msg{};
-        create_msg.kind = EVMC_CREATE;
+        zvmc_message create_msg{};
+        create_msg.kind = ZVMC_CREATE;
         create_msg.recipient = create_address;
         create_msg.gas = create_gas;
 
         const auto create_result = vm.execute(host, rev, create_msg, code.data(), code.size());
-        if (create_result.status_code != EVMC_SUCCESS)
+        if (create_result.status_code != ZVMC_SUCCESS)
         {
             out << "Contract creation failed: " << create_result.status_code << "\n";
             return create_result.status_code;
@@ -109,9 +109,9 @@ int run(VM& vm,
     const auto gas_used = msg.gas - result.gas_left;
     out << "Result:   " << result.status_code << "\nGas used: " << gas_used << "\n";
 
-    if (result.status_code == EVMC_SUCCESS || result.status_code == EVMC_REVERT)
+    if (result.status_code == ZVMC_SUCCESS || result.status_code == ZVMC_REVERT)
         out << "Output:   " << hex({result.output_data, result.output_size}) << "\n";
 
     return 0;
 }
-}  // namespace evmc::tooling
+}  // namespace zvmc::tooling

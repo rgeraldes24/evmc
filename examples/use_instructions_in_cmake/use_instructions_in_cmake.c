@@ -2,11 +2,11 @@
 // Copyright 2018 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
 
-/** This example shows how to use evmc::instructions library from evmc CMake package. */
+/** This example shows how to use zvmc::instructions library from zvmc CMake package. */
 
-#include <evmc/instructions.h>
+#include <zvmc/instructions.h>
 
 int main()
 {
-    return evmc_get_instruction_metrics_table(EVMC_SHANGHAI)[OP_STOP].gas_cost;
+    return zvmc_get_instruction_metrics_table(ZVMC_SHANGHAI)[OP_STOP].gas_cost;
 }
