@@ -3,16 +3,16 @@
 # Licensed under the Apache License, Version 2.0.
 
 add_library(tooling STATIC)
-add_library(evmc::tooling ALIAS tooling)
+add_library(zvmc::tooling ALIAS tooling)
 target_compile_features(tooling PUBLIC cxx_std_17)
-target_link_libraries(tooling PUBLIC evmc::evmc_cpp evmc::mocked_host)
+target_link_libraries(tooling PUBLIC zvmc::zvmc_cpp zvmc::mocked_host)
 
 target_sources(
     tooling PRIVATE
-    ${EVMC_INCLUDE_DIR}/evmc/tooling.hpp
+    ${ZVMC_INCLUDE_DIR}/zvmc/tooling.hpp
     run.cpp
 )
 
-if(EVMC_INSTALL)
-    install(TARGETS tooling EXPORT evmcTargets ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
+if(ZVMC_INSTALL)
+    install(TARGETS tooling EXPORT zvmcTargets ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif()

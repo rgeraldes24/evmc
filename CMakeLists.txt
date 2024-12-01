@@ -8,8 +8,8 @@ if(POLICY CMP0074)
     cmake_policy(SET CMP0074 NEW)
 endif()
 
-if(TARGET evmc)
-    # The evmc library has been already created (probably by other submodule).
+if(TARGET zvmc)
+    # The zvmc library has been already created (probably by other submodule).
     return()
 endif()
 
@@ -20,19 +20,19 @@ include(CablePackage)
 include(CMakeDependentOption)
 include(CMakePackageConfigHelpers)
 
-option(EVMC_JAVA "Enable building Java Native Interface (JNI) bindings" OFF)
+option(ZVMC_JAVA "Enable building Java Native Interface (JNI) bindings" OFF)
 
-option(EVMC_INSTALL "Enable EVMC installation (e.g. make install)" ON)
+option(ZVMC_INSTALL "Enable ZVMC installation (e.g. make install)" ON)
 
-option(EVMC_TESTING "Build everything (libraries, tools, examples, internal tests)" OFF)
+option(ZVMC_TESTING "Build everything (libraries, tools, examples, internal tests)" OFF)
 
-cmake_dependent_option(EVMC_TOOLS "Build EVMC tools" OFF
-    "NOT EVMC_TESTING" ON)
+cmake_dependent_option(ZVMC_TOOLS "Build ZVMC tools" OFF
+    "NOT ZVMC_TESTING" ON)
 
-cmake_dependent_option(EVMC_EXAMPLES "Build EVMC examples" OFF
-    "NOT EVMC_TESTING" ON)
+cmake_dependent_option(ZVMC_EXAMPLES "Build ZVMC examples" OFF
+    "NOT ZVMC_TESTING" ON)
 
-option(HUNTER_ENABLED "Enable Hunter package manager support" ${EVMC_TOOLS})
+option(HUNTER_ENABLED "Enable Hunter package manager support" ${ZVMC_TOOLS})
 
 if(HUNTER_ENABLED)
     set(HUNTER_CONFIGURATION_TYPES Release CACHE STRING "Build type of Hunter packages")
@@ -43,7 +43,7 @@ endif()
 
 cable_set_build_type(DEFAULT Release CONFIGURATION_TYPES Debug Release)
 
-project(evmc)
+project(zvmc)
 set(PROJECT_VERSION 10.1.0)
 
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -78,49 +78,49 @@ elseif(CABLE_COMPILER_GNU)
     set(CMAKE_CXX_FLAGS_COVERAGE "--coverage")
 endif()
 
-set(EVMC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
+set(ZVMC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 
 add_subdirectory(lib)
 
-if(EVMC_JAVA)
+if(ZVMC_JAVA)
     add_subdirectory(bindings/java)
 endif()
 
-if(EVMC_TOOLS)
+if(ZVMC_TOOLS)
     add_subdirectory(tools)
 endif()
 
-if(EVMC_EXAMPLES)
+if(ZVMC_EXAMPLES)
     add_subdirectory(examples)
 endif()
 
-if(EVMC_TESTING)
+if(ZVMC_TESTING)
     enable_testing()
     add_subdirectory(test)
 endif()
 
-write_basic_package_version_file(evmcConfigVersion.cmake COMPATIBILITY ExactVersion)
+write_basic_package_version_file(zvmcConfigVersion.cmake COMPATIBILITY ExactVersion)
 
 configure_package_config_file(
     cmake/Config.cmake.in
-    evmcConfig.cmake
-    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/evmc
+    zvmcConfig.cmake
+    INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/zvmc
 )
 
-if(EVMC_INSTALL)
-    install(DIRECTORY include/evmc DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+if(ZVMC_INSTALL)
+    install(DIRECTORY include/zvmc DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
     install(
-        EXPORT evmcTargets
-        NAMESPACE evmc::
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/evmc
+        EXPORT zvmcTargets
+        NAMESPACE zvmc::
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/zvmc
     )
     install(
         FILES
-        ${CMAKE_CURRENT_BINARY_DIR}/evmcConfig.cmake
-        ${CMAKE_CURRENT_BINARY_DIR}/evmcConfigVersion.cmake
-        cmake/EVMC.cmake
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/evmc
+        ${CMAKE_CURRENT_BINARY_DIR}/zvmcConfig.cmake
+        ${CMAKE_CURRENT_BINARY_DIR}/zvmcConfigVersion.cmake
+        cmake/ZVMC.cmake
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/zvmc
     )
 endif()
 

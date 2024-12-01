@@ -4,17 +4,17 @@
 
 add_library(
     loader STATIC
-    ${EVMC_INCLUDE_DIR}/evmc/loader.h
+    ${ZVMC_INCLUDE_DIR}/zvmc/loader.h
     loader.c
 )
 
-add_library(evmc::loader ALIAS loader)
+add_library(zvmc::loader ALIAS loader)
 set_target_properties(loader PROPERTIES
-    OUTPUT_NAME evmc-loader
+    OUTPUT_NAME zvmc-loader
     POSITION_INDEPENDENT_CODE TRUE
 )
-target_link_libraries(loader INTERFACE ${CMAKE_DL_LIBS} PUBLIC evmc::evmc)
+target_link_libraries(loader INTERFACE ${CMAKE_DL_LIBS} PUBLIC zvmc::zvmc)
 
-if(EVMC_INSTALL)
-    install(TARGETS loader EXPORT evmcTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})
+if(ZVMC_INSTALL)
+    install(TARGETS loader EXPORT zvmcTargets DESTINATION ${CMAKE_INSTALL_LIBDIR})
 endif()

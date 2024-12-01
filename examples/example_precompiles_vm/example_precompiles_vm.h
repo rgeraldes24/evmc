@@ -3,17 +3,17 @@
 // Licensed under the Apache License, Version 2.0.
 #pragma once
 
-#include <evmc/evmc.h>
-#include <evmc/utils.h>
+#include <zvmc/utils.h>
+#include <zvmc/zvmc.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 /**
- * Creates EVMC Example Precompiles VM.
+ * Creates ZVMC Example Precompiles VM.
  */
-EVMC_EXPORT struct evmc_vm* evmc_create_example_precompiles_vm(void);
+ZVMC_EXPORT struct zvmc_vm* zvmc_create_example_precompiles_vm(void);
 
 #ifdef __cplusplus
 }

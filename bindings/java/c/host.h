@@ -1,18 +1,18 @@
 // EVMC: Ethereum Client-VM Connector API.
 // Copyright 2019 The EVMC Authors.
 // Licensed under the Apache License, Version 2.0.
-#include "evmc/evmc.h"
+#include "zvmc/zvmc.h"
 #include <assert.h>
 #include <jni.h>
 
-#ifndef _Included_org_theqrl_evmc_Host
-#define _Included_org_theqrl_evmc_Host
+#ifndef _Included_org_theqrl_zvmc_Host
+#define _Included_org_theqrl_zvmc_Host
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-int evmc_java_set_jvm(JNIEnv*);
-const struct evmc_host_interface* evmc_java_get_host_interface();
+int zvmc_java_set_jvm(JNIEnv*);
+const struct zvmc_host_interface* zvmc_java_get_host_interface();
 
 static inline void* GetDirectBuffer(JNIEnv* jenv, jobject buf, size_t* size)
 {
